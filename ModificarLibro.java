@@ -110,7 +110,7 @@ public class ModificarLibro extends JFrame {
             autorField.setText(libro.mostrarAutor());
             isbnField.setText(libro.mostrarISBN());
             editorialField.setText(libro.mostrarEditorial());
-            añoPublicacionField.setText(libro.mostrarAñoPublicacion());
+            añoPublicacionField.setText(String.valueOf(libro.mostrarAñoPublicacion()));
             categoriaField.setText(libro.mostrarCategoria());
             estadoField.setText(libro.mostrarEstado());
             
@@ -131,7 +131,7 @@ public class ModificarLibro extends JFrame {
         String autor = autorField.getText();
         String isbn = isbnField.getText();
         String editorial = editorialField.getText();
-        String añoPublicacion = añoPublicacionField.getText();
+        int añoPublicacion = Integer.parseInt(añoPublicacionField.getText());
         String categoria = categoriaField.getText();
         String estado = estadoField.getText();
         
@@ -140,7 +140,7 @@ public class ModificarLibro extends JFrame {
             stmt.setString(1, autor);
             stmt.setString(2, isbn);
             stmt.setString(3, editorial);
-            stmt.setString(4, añoPublicacion);
+            stmt.setInt(4, añoPublicacion);
             stmt.setString(5, categoria);
             stmt.setString(6, estado);
             stmt.setString(7, titulo);
@@ -166,7 +166,7 @@ public class ModificarLibro extends JFrame {
                 String autor = rs.getString("autor");
                 String isbn = rs.getString("isbn");
                 String editorial = rs.getString("editorial");
-                String añoPublicacion = rs.getString("año_publicacion");
+                int añoPublicacion = rs.getInt("año_publicacion");
                 String categoria = rs.getString("categoria");
                 String estado = rs.getString("estado");
                 return new Libro(titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);

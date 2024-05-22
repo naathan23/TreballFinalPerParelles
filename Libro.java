@@ -3,11 +3,11 @@ public class Libro {
     private String autor;
     private String isbn;
     private String editorial;
-    private String añoPublicacion;
+    private int añoPublicacion;
     private String categoria;
     private String estado;
 
-    public Libro(String titulo, String autor, String isbn, String editorial, String añoPublicacion, String categoria, String estado) {
+    public Libro(String titulo, String autor, String isbn, String editorial, int añoPublicacion, String categoria, String estado) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -49,11 +49,11 @@ public class Libro {
         this.editorial = editorial;
     }
 
-    public String mostrarAñoPublicacion() {
+    public int mostrarAñoPublicacion() {
         return añoPublicacion;
     }
 
-    public void ponerAñoPublicacion(String añoPublicacion) {
+    public void ponerAñoPublicacion(int añoPublicacion) {
         this.añoPublicacion = añoPublicacion;
     }
 

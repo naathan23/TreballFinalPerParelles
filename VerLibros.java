@@ -41,7 +41,7 @@ public class VerLibros extends JFrame {
                 String autor = rs.getString("autor");
                 String isbn = rs.getString("isbn");
                 String editorial = rs.getString("editorial");
-                String añoPublicacion = rs.getString("año_publicacion");
+                int añoPublicacion = rs.getInt("año_publicacion");
                 String categoria = rs.getString("categoria");
                 String estado = rs.getString("estado");
 

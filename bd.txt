@@ -8,7 +8,7 @@ CREATE TABLE libros (
     autor VARCHAR(255),
     isbn VARCHAR(255),
     editorial VARCHAR(255),
-    año_publicacion VARCHAR(10),
+    año_publicacion INT,
     categoria VARCHAR(255),
     estado VARCHAR(50)
 );
