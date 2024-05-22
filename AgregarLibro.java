@@ -91,9 +91,18 @@ public class AgregarLibro extends JFrame {
         String autor = autorField.getText();
         String isbn = isbnField.getText();
         String editorial = editorialField.getText();
-        String añoPublicacion = añoPublicacionField.getText();
+        String añoPublicacionstr = añoPublicacionField.getText();
         String categoria = categoriaField.getText();
         String estado = "disponible";
+
+        int añoPublicacion;
+
+        try {
+            añoPublicacion = Integer.parseInt(añoPublicacionstr);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "el año de publicacion debe ser un numero entero.", "error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
 
         Libro nuevoLibro = new Libro(titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
@@ -104,7 +113,7 @@ public class AgregarLibro extends JFrame {
             stmt.setString(2, nuevoLibro.mostrarAutor());
             stmt.setString(3, nuevoLibro.mostrarISBN());
             stmt.setString(4, nuevoLibro.mostrarEditorial());
-            stmt.setString(5, nuevoLibro.mostrarAñoPublicacion());
+            stmt.setInt(5, nuevoLibro.mostrarAñoPublicacion());
             stmt.setString(6, nuevoLibro.mostrarCategoria());
             stmt.setString(7, nuevoLibro.mostrarEstado());
             int rowsAffected = stmt.executeUpdate();
