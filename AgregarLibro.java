@@ -81,12 +81,12 @@ public class AgregarLibro extends JFrame {
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                agregarContacto();
+                agregarLibro();
             }
         });
     }
 
-    public void agregarContacto() {
+    public void agregarLibro() {
         String titulo = tituloField.getText();
         String autor = autorField.getText();
         String isbn = isbnField.getText();
