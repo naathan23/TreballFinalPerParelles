@@ -45,7 +45,7 @@ public class VerLibros extends JFrame {
                 String categoria = rs.getString("categoria");
                 String estado = rs.getString("estado");
 
-                Libro libro = new Libro(titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
+                Libro libro = new Libro(0, titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
                 libros.add(libro);
             }
         } catch (SQLException e) {

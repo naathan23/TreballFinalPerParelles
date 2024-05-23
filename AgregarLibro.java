@@ -105,7 +105,7 @@ public class AgregarLibro extends JFrame {
         }
 
 
-        Libro nuevoLibro = new Libro(titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
+        Libro nuevoLibro = new Libro(0, titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
 
         try (Connection conn = ConexionBD.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO libros (titulo, autor, isbn, editorial, año_publicacion, categoria, estado) VALUES (?, ?, ?, ?, ?, ?, ?)")) {

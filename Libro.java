@@ -1,4 +1,5 @@
 public class Libro {
+    private int id;
     private String titulo;
     private String autor;
     private String isbn;
@@ -7,7 +8,8 @@ public class Libro {
     private String categoria;
     private String estado;
 
-    public Libro(String titulo, String autor, String isbn, String editorial, int añoPublicacion, String categoria, String estado) {
+    public Libro(int id, String titulo, String autor, String isbn, String editorial, int añoPublicacion, String categoria, String estado) {
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -15,6 +17,14 @@ public class Libro {
         this.añoPublicacion = añoPublicacion;
         this.categoria = categoria;
         this.estado = estado;
+    }
+
+    public int mostrarId() {
+        return id;
+    }
+
+    public void ponerId(int id) {
+        this.id = id;
     }
 
     public String mostrarTitulo() {

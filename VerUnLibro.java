@@ -64,7 +64,7 @@ public class VerUnLibro extends JFrame {
                 int añoPublicacion = rs.getInt("año_publicacion");
                 String categoria = rs.getString("categoria");
                 String estado = rs.getString("estado");
-                return new Libro(titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
+                return new Libro(0, titulo, autor, isbn, editorial, añoPublicacion, categoria, estado);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
